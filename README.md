@@ -1,43 +1,116 @@
- # 🗂️ MongoDB Project
+# Multilingual Audio Transcriber (Hindi | Marathi | Sanskrit)
 
- Welcome to the **MongoDB Project**! This repository contains a full-stack application with an Express.js backend and a Next.js frontend. This README provides comprehensive setup, usage, and contribution instructions, along with visual icons for clarity.
+## 📌 Project Description
 
- ---
+This project is a full-stack web application built with **Next.js** and **Express.js** that allows users to:
 
- ## 📁 Project Structure
+- Upload an audio file (e.g., `.mp3` or `.wav`)
+- Automatically transcribe the audio to text
+- Translate the recognized text into Hindi, Marathi, or Sanskrit
+- Display the translated text in Devanagari script on the UI
+- Optionally play back the translated text as speech (Text-to-Speech)
 
- ```
- .
- ├── GOOGLE_SETUP.md
- ├── package.json
- ├── README.md
- ├── setup.bat
- ├── setup.sh
- ├── express-server/
- │   ├── index.js
- │   ├── package.json
- │   └── tmp/
- └── nextjs-app/
-     ├── next-env.d.ts
-     ├── next.config.ts
-     ├── package.json
-     ├── postcss.config.mjs
-     ├── README.md
-     ├── tsconfig.json
-     ├── app/
-     │   ├── favicon.ico
-     │   ├── globals.css
-     │   ├── layout.tsx
-     │   └── page.tsx
-     └── public/
-         ├── file.svg
-         ├── globe.svg
-         ├── next.svg
-         ├── vercel.svg
-         ├── window.svg
- ```
+---
 
- ---
+## ⚡ How It Works
+
+### 1. Frontend (Next.js)
+- Users upload an audio file and select a target language from a dropdown
+- The file and language choice are sent to the Express backend via API
+- Transcribed and translated text is displayed on the screen
+- "🔊 Listen" button lets users hear the translation using the browser's SpeechSynthesis API
+
+### 2. Backend (Express.js)
+- Receives the uploaded audio file
+- Uses a speech recognition engine (Google Speech-to-Text, Whisper, or Web Speech API) to transcribe audio
+- Translates the recognized text using Google Translate API
+- Sends the translated text back to the frontend
+
+---
+
+## �️ Tech Stack
+
+**Frontend:**
+- Next.js (React + TailwindCSS)
+- Web Speech API (for direct recording)
+- Web SpeechSynthesis API (for text-to-speech)
+
+**Backend:**
+- Express.js (API routes)
+- multer (audio uploads)
+- Google Translate (translation)
+- Whisper / Google Speech-to-Text (transcription)
+
+**Languages Supported:**
+- Hindi 🇮🇳 (`hi-IN`)
+- Marathi 🌸 (`mr-IN`)
+- Sanskrit 📜 (`sa`)
+
+---
+
+## 🚀 Features
+
+✅ Upload audio files (`.mp3`, `.wav`)
+✅ Automatic speech transcription
+✅ Translate transcription into Hindi, Marathi, Sanskrit
+✅ Display text in Devanagari script
+✅ Listen to the translated text (Text-to-Speech)
+✅ Fullstack: Next.js frontend + Express backend
+
+---
+
+## 📂 Workflow Example
+
+1. User uploads: `lecture_hindi.mp3`
+2. Backend transcribes: `"भारत एक महान देश है"`
+3. User selects "Marathi" → Translated to: `"भारत एक महान देश आहे"`
+4. App displays text + speaks it aloud in Marathi
+
+---
+
+## 🏗️ Project Structure
+
+```
+.
+├── express-server/         # Express.js backend (API, transcription, translation)
+├── nextjs-app/             # Next.js frontend (UI)
+├── .env.example            # Example environment variables
+├── package.json            # Project metadata
+├── README.md               # Project documentation
+├── setup.bat / setup.sh    # Setup scripts
+```
+
+---
+
+## 🚦 Getting Started
+
+1. **Clone the repository**
+  ```sh
+  git clone https://github.com/nimishsarpande712/voice-transcription-Plus-translation-app.git
+  cd voice-transcription-Plus-translation-app
+  ```
+2. **Install dependencies**
+  ```sh
+  cd express-server && npm install
+  cd ../nextjs-app && npm install
+  ```
+3. **Configure environment variables**
+  - Copy `.env.example` to `.env` and fill in required values for API keys and services
+4. **Run the servers**
+  - Start Express backend: `npm start` (from `express-server`)
+  - Start Next.js frontend: `npm run dev` (from `nextjs-app`)
+
+---
+
+## 🤝 Contributing
+
+Pull requests and issues are welcome! Please follow conventional commit messages and provide clear descriptions.
+
+---
+
+## 📄 License
+
+BSD-3-Clause
 
  ## 🚀 Features
 
@@ -96,30 +169,13 @@
 
  ### 4️⃣ Start the Applications
 
- #### Start Express Server
- ```powershell
- cd ../express-server; npm start
- ```
 
- #### Start Next.js Frontend
- ```powershell
- cd ../nextjs-app; npm run dev
- ```
 
  ---
 
  ## 🌐 API Endpoints
-
- | Method | Endpoint         | Description           |
- |--------|------------------|----------------------|
- | GET    | `/api/items`     | List all items       |
  | POST   | `/api/items`     | Create new item      |
  | PUT    | `/api/items/:id` | Update item by ID    |
- | DELETE | `/api/items/:id` | Delete item by ID    |
-
- ---
-
- ## 🖥️ Frontend Usage
 
  - Access the Next.js app at [http://localhost:3000](http://localhost:3000)
  - Features:
