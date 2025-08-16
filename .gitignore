@@ -1,0 +1,18 @@
+# Ignore environment variable files
+.env
+
+# Ignore node_modules folders
+node_modules/
+express-server/node_modules/
+nextjs-app/node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+express-server/tmp/
+node_modules

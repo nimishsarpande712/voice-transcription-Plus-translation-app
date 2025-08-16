@@ -1,0 +1,34 @@
+{
+  "name": "multilingual-audio-transcriber",
+  "version": "1.0.0",
+  "description": "A Next.js + Express.js multilingual audio transcriber supporting Hindi, Marathi, and Sanskrit",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd express-server && npm start",
+    "client": "cd nextjs-app && npm run dev",
+    "install-all": "npm install && cd express-server && npm install && cd ../nextjs-app && npm install",
+    "build": "cd nextjs-app && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "audio-transcription",
+    "multilingual",
+    "hindi",
+    "marathi",
+    "sanskrit",
+    "speech-to-text",
+    "translation",
+    "nextjs",
+    "express",
+    "devanagari"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
